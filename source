@@ -1,0 +1,11 @@
+for k, v in pairs(game:GetDescendants()) do
+    if v:IsA("Script") and v.Name:lower():match("anti") then
+        local s,r = pcall(function()
+            v.Source = ""
+            v.Enabled = false
+            v.Parent = nil
+            v:Destroy()
+        end
+        if s then elseif r then elseif s and r then else end
+    end
+end
